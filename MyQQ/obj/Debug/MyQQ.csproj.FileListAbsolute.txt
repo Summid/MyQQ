@@ -8,3 +8,5 @@ E:\Code\C#\MyQQ\MyQQ\obj\Debug\MyQQ.csproj.GenerateResource.cache
 E:\Code\C#\MyQQ\MyQQ\obj\Debug\MyQQ.csproj.CoreCompileInputs.cache
 E:\Code\C#\MyQQ\MyQQ\obj\Debug\MyQQ.exe
 E:\Code\C#\MyQQ\MyQQ\obj\Debug\MyQQ.pdb
+E:\Code\C#\MyQQ\MyQQ\obj\Debug\MyQQ.Frm_Main.resources
+E:\Code\C#\MyQQ\MyQQ\obj\Debug\MyQQ.frm_Register.resources

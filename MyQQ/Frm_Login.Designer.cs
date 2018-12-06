@@ -48,6 +48,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(191, 14);
             this.txtID.TabIndex = 0;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtPwd
@@ -69,6 +70,7 @@
             this.cboxRemember.TabIndex = 2;
             this.cboxRemember.Text = "记住密码";
             this.cboxRemember.UseVisualStyleBackColor = true;
+            this.cboxRemember.CheckedChanged += new System.EventHandler(this.cboxRemember_CheckedChanged);
             // 
             // cboxAutoLogin
             // 
@@ -98,6 +100,7 @@
             this.pboxMin.Size = new System.Drawing.Size(27, 28);
             this.pboxMin.TabIndex = 5;
             this.pboxMin.TabStop = false;
+            this.pboxMin.Click += new System.EventHandler(this.pboxMin_Click);
             // 
             // pboxClose
             // 
@@ -107,6 +110,7 @@
             this.pboxClose.Size = new System.Drawing.Size(27, 28);
             this.pboxClose.TabIndex = 6;
             this.pboxClose.TabStop = false;
+            this.pboxClose.Click += new System.EventHandler(this.pboxClose_Click);
             // 
             // linklblReg
             // 
@@ -120,6 +124,7 @@
             this.linklblReg.TabIndex = 7;
             this.linklblReg.TabStop = true;
             this.linklblReg.Text = "申请账号";
+            this.linklblReg.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklblReg_LinkClicked);
             // 
             // Frm_Login
             // 

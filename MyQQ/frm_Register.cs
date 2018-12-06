@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace MyQQ
 {
-    public partial class Frm_Main : Form
+    public partial class frm_Register : Form
     {
-        public Frm_Main()
+        public frm_Register()
         {
             InitializeComponent();
         }
 
-        private void Frm_Main_Load(object sender, EventArgs e)
+        private void frm_Register_Load(object sender, EventArgs e)
         {
-
+            cboxStar.SelectedIndex = cboxBloodType.SelectedIndex = 0; //设置星座和血型的默认选项
         }
     }
 }

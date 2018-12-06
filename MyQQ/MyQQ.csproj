@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataOperator.cs" />
+    <Compile Include="frm_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Register.Designer.cs">
+      <DependentUpon>frm_Register.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,12 @@
     <Compile Include="PublicClass.cs" />
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Main.resx">
+      <DependentUpon>Frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Register.resx">
+      <DependentUpon>frm_Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +102,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Src\Resources\login.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\Resources\searchback.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\Resources\QQ.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\Resources\Logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

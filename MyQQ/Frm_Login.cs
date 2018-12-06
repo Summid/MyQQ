@@ -106,6 +106,49 @@ namespace MyQQ
             }
         }
 
+        private void cboxRemember_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!cboxRemember.Checked)  //如果忘记密码复选框不打勾，那自动登录就不能打勾
+                cboxAutoLogin.Checked = false;
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e) //在账号文本框输入的时候触发
+        {
+            //ValidateInput();
+
+            string sql = "select Pwd,Remember,AutoLogin from tb_User where ID=" +
+                int.Parse(txtID.Text.Trim()) + " ";
+            DataSet ds = dataOper.GetDataSet(sql);  //获取查询结果
+            if(ds.Tables[0].Rows.Count>0) //如果有该用户
+            {
+                if(Convert.ToInt32(ds.Tables[0].Rows[0][1])==1) //判断是否记住密码
+                {
+                    cboxRemember.Checked = true;
+                    txtPwd.Text = ds.Tables[0].Rows[0][0].ToString(); //自动输入密码
+                    if(Convert.ToInt32(ds.Tables[0].Rows[0][2])==1) //判断是否自动登录
+                    {
+                        cboxAutoLogin.Checked = true;
+                        pboxLogin_Click(sender, e); //自动登录
+                    }
+                }
+            }
+        }
         
+        private void linklblReg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) //点击申请账号按钮
+        {
+            frm_Register frmRegister = new frm_Register();
+            frmRegister.Show();
+        }
+
+        private void pboxMin_Click(object sender, EventArgs e) //点击最小化按钮
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pboxClose_Click(object sender, EventArgs e) //点击关闭按钮
+        {
+            Application.ExitThread();
+        }
+
     }
 }

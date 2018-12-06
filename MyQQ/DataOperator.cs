@@ -38,5 +38,14 @@ namespace MyQQ
             connection.Close();
             return result;
         }
+
+        public DataSet GetDataSet(string sql) //用户自动登录时，判断数据表中的自动登录字段
+        {
+            SqlDataAdapter sqlda = new SqlDataAdapter(sql, connection); //指定要执行的SQL 语句
+            DataSet ds = new DataSet();  //DataSet类为数据集
+
+            sqlda.Fill(ds); //将查询结果填充进数据集
+            return ds; //返回数据集
+        }
     }
 }
