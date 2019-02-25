@@ -43,14 +43,14 @@
             this.lblAge = new System.Windows.Forms.Label();
             this.lblNickName = new System.Windows.Forms.Label();
             this.grpDetails = new System.Windows.Forms.GroupBox();
+            this.cboxBloodType = new System.Windows.Forms.ComboBox();
+            this.cboxStar = new System.Windows.Forms.ComboBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.lblBloodType = new System.Windows.Forms.Label();
             this.lblStar = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.cboxStar = new System.Windows.Forms.ComboBox();
-            this.cboxBloodType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.grpBaseInfo.SuspendLayout();
             this.grpDetails.SuspendLayout();
@@ -202,6 +202,49 @@
             this.grpDetails.TabStop = false;
             this.grpDetails.Text = "选填详细信息";
             // 
+            // cboxBloodType
+            // 
+            this.cboxBloodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxBloodType.FormattingEnabled = true;
+            this.cboxBloodType.Items.AddRange(new object[] {
+            "A 型",
+            "B 型",
+            "O 型",
+            "AB 型"});
+            this.cboxBloodType.Location = new System.Drawing.Point(85, 76);
+            this.cboxBloodType.Name = "cboxBloodType";
+            this.cboxBloodType.Size = new System.Drawing.Size(142, 20);
+            this.cboxBloodType.TabIndex = 5;
+            // 
+            // cboxStar
+            // 
+            this.cboxStar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxStar.FormattingEnabled = true;
+            this.cboxStar.Items.AddRange(new object[] {
+            "白羊座",
+            "金牛座",
+            "双子座",
+            "巨蟹座",
+            "狮子座",
+            "处女座",
+            "天秤座",
+            "天蝎座",
+            "射手座",
+            "摩羯座",
+            "水瓶座",
+            "双鱼座"});
+            this.cboxStar.Location = new System.Drawing.Point(85, 47);
+            this.cboxStar.Name = "cboxStar";
+            this.cboxStar.Size = new System.Drawing.Size(142, 20);
+            this.cboxStar.TabIndex = 4;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(85, 20);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(142, 21);
+            this.txtName.TabIndex = 3;
+            // 
             // lblBloodType
             // 
             this.lblBloodType.AutoSize = true;
@@ -237,6 +280,7 @@
             this.btnRegister.TabIndex = 3;
             this.btnRegister.Text = "注册";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnCancel
             // 
@@ -247,49 +291,7 @@
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(85, 20);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(142, 21);
-            this.txtName.TabIndex = 3;
-            // 
-            // cboxStar
-            // 
-            this.cboxStar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxStar.FormattingEnabled = true;
-            this.cboxStar.Items.AddRange(new object[] {
-            "白羊座",
-            "金牛座",
-            "双子座",
-            "巨蟹座",
-            "狮子座",
-            "处女座",
-            "天秤座",
-            "天蝎座",
-            "射手座",
-            "摩羯座",
-            "水瓶座",
-            "双鱼座"});
-            this.cboxStar.Location = new System.Drawing.Point(85, 47);
-            this.cboxStar.Name = "cboxStar";
-            this.cboxStar.Size = new System.Drawing.Size(142, 20);
-            this.cboxStar.TabIndex = 4;
-            // 
-            // cboxBloodType
-            // 
-            this.cboxBloodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxBloodType.FormattingEnabled = true;
-            this.cboxBloodType.Items.AddRange(new object[] {
-            "A 型",
-            "B 型",
-            "O 型",
-            "AB 型"});
-            this.cboxBloodType.Location = new System.Drawing.Point(85, 76);
-            this.cboxBloodType.Name = "cboxBloodType";
-            this.cboxBloodType.Size = new System.Drawing.Size(142, 20);
-            this.cboxBloodType.TabIndex = 5;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frm_Register
             // 

@@ -9,8 +9,8 @@ using System.Data.SqlClient;
 namespace MyQQ
 {
     class DataOperator
-    {
-        private static string connString = "Server=DESKTOP-M5AGCMI;Database=db_MyQQ;integrated security=SSPI";
+    {  //"Server=DESKTOP-M5AGCMI;Database=db_MyQQ;integrated security=SSPI" 用Windows身份验证的字符串
+        private static string connString = "Server=DESKTOP-M5AGCMI;Database=db_MyQQ;User ID=sa;Pwd=summid23.";
         //数据库连接字符串
         public static SqlConnection connection = new SqlConnection(connString);
         //数据库连接对象

@@ -45,10 +45,7 @@ namespace MyQQ
             }
             return true;
         }
-        private void Frm_Login_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void txtID_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -72,7 +69,7 @@ namespace MyQQ
                 string sql = "select count(*) from tb_User where ID=" +
                     int.Parse(txtID.Text.Trim()) + " and Pwd = '" + txtPwd.Text.Trim() + "'";
                 int num = dataOper.ExecSQL(sql);
-                if(num==1)  //验证通过 1->loginID?
+                if(num==1)  //验证通过 
                 {
                     PublicClass.loginID = int.Parse(txtID.Text.Trim()); //设置登录的账号
                     if(cboxRemember.Checked)  //如果勾选了记住密码
