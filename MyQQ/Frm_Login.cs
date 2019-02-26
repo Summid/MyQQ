@@ -72,28 +72,28 @@ namespace MyQQ
                 if(num==1)  //验证通过 
                 {
                     PublicClass.loginID = int.Parse(txtID.Text.Trim()); //设置登录的账号
-                    if(cboxRemember.Checked)  //如果勾选了记住密码
+                    if (cboxRemember.Checked)  //如果勾选了记住密码
                     {
                         dataOper.ExecSQLResult("update tb_User set Remember=1 where ID="
                             + int.Parse(txtID.Text.Trim())); //将该用户记住密码值设为1
-                        if(cboxAutoLogin.Checked) //如果也勾选了自动登录
+                        if (cboxAutoLogin.Checked) //如果也勾选了自动登录
                         {
-                            dataOper.ExecSQLResult("update tu_User set AutoLogin=1 where ID="
+                            dataOper.ExecSQLResult("update tb_User set AutoLogin=1 where ID="
                                 + int.Parse(txtID.Text.Trim())); //将该用户自动登录值为1
                         }
-                        else
-                        {   //如果没有勾选记住密码和自动登录，则将该两项值设置为0
-                            dataOper.ExecSQLResult("update tb_User set Remember=0 where ID="
-                                + int.Parse(txtID.Text.Trim()));
-                            dataOper.ExecSQLResult("update tu_User set AutoLogin=0 where ID="
-                                + int.Parse(txtID.Text.Trim()));
-                        }
+                    }
+                    else
+                    {   //如果没有勾选记住密码和自动登录，则将该两项值设置为0
+                        dataOper.ExecSQLResult("update tb_User set Remember=0 where ID="
+                            + int.Parse(txtID.Text.Trim()));
+                        dataOper.ExecSQLResult("update tb_User set AutoLogin=0 where ID="
+                            + int.Parse(txtID.Text.Trim()));
+                    }
                         dataOper.ExecSQLResult("update tb_User set Flag=1 where ID="
                             + int.Parse(txtID.Text.Trim()));  //登录后将在线状态设置为1
                         Frm_Main frmMain = new Frm_Main();  //创建主界面
                         frmMain.Show(); //显示主界面
                         this.Visible = false; //隐藏登录主窗体
-                    }
                 }
                 else
                 {
@@ -105,27 +105,35 @@ namespace MyQQ
 
         private void cboxRemember_CheckedChanged(object sender, EventArgs e)
         {
-            if (!cboxRemember.Checked)  //如果忘记密码复选框不打勾，那自动登录就不能打勾
+            if (!cboxRemember.Checked)  //如果记住密码复选框不打勾，那自动登录就不能打勾
                 cboxAutoLogin.Checked = false;
+        }
+
+        private void cboxAutoLogin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cboxAutoLogin.Checked)  //如果自动登录打勾，那记住密码就要打勾
+                cboxRemember.Checked = true;
         }
 
         private void txtID_TextChanged(object sender, EventArgs e) //在账号文本框输入的时候触发
         {
             //ValidateInput();
-
-            string sql = "select Pwd,Remember,AutoLogin from tb_User where ID=" +
-                int.Parse(txtID.Text.Trim()) + " ";
-            DataSet ds = dataOper.GetDataSet(sql);  //获取查询结果
-            if(ds.Tables[0].Rows.Count>0) //如果有该用户
+            if (txtID.Text!="")
             {
-                if(Convert.ToInt32(ds.Tables[0].Rows[0][1])==1) //判断是否记住密码
+                string sql = "select Pwd,Remember,AutoLogin from tb_User where ID=" +
+                    int.Parse(txtID.Text.Trim()) + " ";
+                DataSet ds = dataOper.GetDataSet(sql);  //获取查询结果
+                if (ds.Tables[0].Rows.Count > 0) //如果有该用户
                 {
-                    cboxRemember.Checked = true;
-                    txtPwd.Text = ds.Tables[0].Rows[0][0].ToString(); //自动输入密码
-                    if(Convert.ToInt32(ds.Tables[0].Rows[0][2])==1) //判断是否自动登录
+                    if (Convert.ToInt32(ds.Tables[0].Rows[0][1]) == 1) //判断是否记住密码
                     {
-                        cboxAutoLogin.Checked = true;
-                        pboxLogin_Click(sender, e); //自动登录
+                        cboxRemember.Checked = true;
+                        txtPwd.Text = ds.Tables[0].Rows[0][0].ToString(); //自动输入密码
+                        if (Convert.ToInt32(ds.Tables[0].Rows[0][2]) == 1) //判断是否自动登录
+                        {
+                            cboxAutoLogin.Checked = true;
+                            pboxLogin_Click(sender, e); //自动登录
+                        }
                     }
                 }
             }
@@ -146,6 +154,5 @@ namespace MyQQ
         {
             Application.ExitThread();
         }
-
     }
 }

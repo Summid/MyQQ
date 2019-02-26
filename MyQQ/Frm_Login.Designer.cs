@@ -81,6 +81,7 @@
             this.cboxAutoLogin.TabIndex = 3;
             this.cboxAutoLogin.Text = "自动登录";
             this.cboxAutoLogin.UseVisualStyleBackColor = true;
+            this.cboxAutoLogin.CheckedChanged += new System.EventHandler(this.cboxAutoLogin_CheckedChanged);
             // 
             // pboxLogin
             // 
