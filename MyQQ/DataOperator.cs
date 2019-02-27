@@ -47,5 +47,15 @@ namespace MyQQ
             sqlda.Fill(ds); //将查询结果填充进数据集
             return ds; //返回数据集
         }
+
+        public SqlDataReader GetDataReader(string sql)  //显示从数据库中获取的用户和好友相关信息
+        {
+            SqlCommand command = new SqlCommand(sql, connection);  //指定要执行的Sql语句
+            if (connection.State == ConnectionState.Open)
+                connection.Close();
+            connection.Open();
+            SqlDataReader datareader = command.ExecuteReader();  //生成SqlDataReader
+            return datareader;  //返回SqlDataReader
+        }
     }
 }

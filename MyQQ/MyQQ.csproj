@@ -47,6 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataOperator.cs" />
+    <Compile Include="Frm_AddFriend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AddFriend.Designer.cs">
+      <DependentUpon>Frm_AddFriend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_EditInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_EditInfo.Designer.cs">
+      <DependentUpon>Frm_EditInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +76,12 @@
     </Compile>
     <Compile Include="Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Remind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Remind.Designer.cs">
+      <DependentUpon>Frm_Remind.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

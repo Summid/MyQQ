@@ -118,7 +118,7 @@ namespace MyQQ
         private void txtID_TextChanged(object sender, EventArgs e) //在账号文本框输入的时候触发
         {
             //ValidateInput();
-            if (txtID.Text!="")
+            if (txtID.Text!="")  //如果账号文本框不为空（先输入再清除的情况）
             {
                 string sql = "select Pwd,Remember,AutoLogin from tb_User where ID=" +
                     int.Parse(txtID.Text.Trim()) + " ";

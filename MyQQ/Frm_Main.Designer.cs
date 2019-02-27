@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("我的好友", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("陌生人", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("我的好友", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("陌生人", System.Windows.Forms.HorizontalAlignment.Left);
             this.imglistHead = new System.Windows.Forms.ImageList(this.components);
             this.imglistSmallHead = new System.Windows.Forms.ImageList(this.components);
             this.imglistMessage = new System.Windows.Forms.ImageList(this.components);
@@ -343,13 +343,13 @@
             // 
             this.lvFriend.BackColor = System.Drawing.Color.OldLace;
             this.lvFriend.ContextMenuStrip = this.cmsFriendList;
-            listViewGroup1.Header = "我的好友";
-            listViewGroup1.Name = "listViewGroup1";
-            listViewGroup2.Header = "陌生人";
-            listViewGroup2.Name = "listViewGroup2";
+            listViewGroup3.Header = "我的好友";
+            listViewGroup3.Name = "listViewGroup1";
+            listViewGroup4.Header = "陌生人";
+            listViewGroup4.Name = "listViewGroup2";
             this.lvFriend.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
+            listViewGroup3,
+            listViewGroup4});
             this.lvFriend.LargeImageList = this.imglistHead;
             this.lvFriend.Location = new System.Drawing.Point(0, 114);
             this.lvFriend.MultiSelect = false;
@@ -412,6 +412,7 @@
             this.tsbtnInfo.Name = "tsbtnInfo";
             this.tsbtnInfo.Size = new System.Drawing.Size(23, 22);
             this.tsbtnInfo.Text = "个人信息";
+            this.tsbtnInfo.Click += new System.EventHandler(this.tsbtnInfo_Click);
             // 
             // tsbtnSearchFriend
             // 
@@ -420,6 +421,7 @@
             this.tsbtnSearchFriend.Name = "tsbtnSearchFriend";
             this.tsbtnSearchFriend.Size = new System.Drawing.Size(52, 22);
             this.tsbtnSearchFriend.Text = "查找";
+            this.tsbtnSearchFriend.Click += new System.EventHandler(this.tsbtnSearchFriend_Click);
             // 
             // tsbtnUpdateFriendList
             // 
@@ -429,6 +431,7 @@
             this.tsbtnUpdateFriendList.Name = "tsbtnUpdateFriendList";
             this.tsbtnUpdateFriendList.Size = new System.Drawing.Size(23, 22);
             this.tsbtnUpdateFriendList.Text = "更新好友列表";
+            this.tsbtnUpdateFriendList.Click += new System.EventHandler(this.tsbtnUpdateFriendList_Click);
             // 
             // tsbtnMessageReading
             // 
@@ -438,6 +441,7 @@
             this.tsbtnMessageReading.Name = "tsbtnMessageReading";
             this.tsbtnMessageReading.Size = new System.Drawing.Size(23, 22);
             this.tsbtnMessageReading.Text = "系统消息";
+            this.tsbtnMessageReading.Click += new System.EventHandler(this.tsbtnMessageReading_Click);
             // 
             // tsbtnExit
             // 
@@ -447,6 +451,7 @@
             this.tsbtnExit.Name = "tsbtnExit";
             this.tsbtnExit.Size = new System.Drawing.Size(23, 22);
             this.tsbtnExit.Text = "退出";
+            this.tsbtnExit.Click += new System.EventHandler(this.tsbtnExit_Click);
             // 
             // Frm_Main
             // 
