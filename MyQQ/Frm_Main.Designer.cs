@@ -283,14 +283,17 @@
             // 
             this.tmMessage.Enabled = true;
             this.tmMessage.Interval = 2000;
+            this.tmMessage.Tick += new System.EventHandler(this.tmMessage_Tick);
             // 
             // tmAddFriend
             // 
             this.tmAddFriend.Interval = 1000;
+            this.tmAddFriend.Tick += new System.EventHandler(this.tmAddFriend_Tick);
             // 
             // tmChat
             // 
             this.tmChat.Interval = 500;
+            this.tmChat.Tick += new System.EventHandler(this.tmChat_Tick);
             // 
             // pboxHead
             // 
@@ -310,6 +313,7 @@
             this.pboxMin.Size = new System.Drawing.Size(27, 18);
             this.pboxMin.TabIndex = 1;
             this.pboxMin.TabStop = false;
+            this.pboxMin.Click += new System.EventHandler(this.pboxMin_Click);
             // 
             // pboxClose
             // 
@@ -319,6 +323,7 @@
             this.pboxClose.Size = new System.Drawing.Size(27, 18);
             this.pboxClose.TabIndex = 2;
             this.pboxClose.TabStop = false;
+            this.pboxClose.Click += new System.EventHandler(this.pboxClose_Click);
             // 
             // lblName
             // 
@@ -359,6 +364,7 @@
             this.lvFriend.StateImageList = this.imglistSmallHead;
             this.lvFriend.TabIndex = 5;
             this.lvFriend.UseCompatibleStateImageBehavior = false;
+            this.lvFriend.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvFriend_MouseDoubleClick);
             // 
             // cmsFriendList
             // 

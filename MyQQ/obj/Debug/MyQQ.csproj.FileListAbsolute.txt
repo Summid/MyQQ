@@ -10,3 +10,4 @@ E:\Code\C#\MyQQ\MyQQ\obj\Debug\MyQQ.exe
 E:\Code\C#\MyQQ\MyQQ\obj\Debug\MyQQ.pdb
 E:\Code\C#\MyQQ\MyQQ\obj\Debug\MyQQ.Frm_Main.resources
 E:\Code\C#\MyQQ\MyQQ\obj\Debug\MyQQ.frm_Register.resources
+E:\Code\C#\MyQQ\MyQQ\obj\Debug\MyQQ.Frm_Chat.resources
